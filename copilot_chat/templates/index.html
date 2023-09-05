@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Split Application</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Split Application</h1>
+    <form method="POST">
+        <label for="group_name">Group Name:</label>
+        <input type="text" name="group_name" id="group_name"><br><br>
+
+        <label for="user1_name">User 1 Name:</label>
+        <input type="text" name="user1_name" id="user1_name">
+        <label for="user1_email">User 1 Email:</label>
+        <input type="email" name="user1_email" id="user1_email">
+        <label for="user1_password">User 1 Password:</label>
+        <input type="password" name="user1_password" id="user1_password"><br><br>
+
+        <label for="user2_name">User 2 Name:</label>
+        <input type="text" name="user2_name" id="user2_name">
+        <label for="user2_email">User 2 Email:</label>
+        <input type="email" name="user2_email" id="user2_email">
+        <label for="user2_password">User 2 Password:</label>
+        <input type="password" name="user2_password" id="user2_password"><br><br>
+
+        <label for="user3_name">User 3 Name:</label>
+        <input type="text" name="user3_name" id="user3_name">
+        <label for="user3_email">User 3 Email:</label>
+        <input type="email" name="user3_email" id="user3_email">
+        <label for="user3_password">User 3 Password:</label>
+        <input type="password" name="user3_password" id="user3_password"><br><br>
+
+        <label for="expense1_description">Expense 1 Description:</label>
+        <input type="text" name="expense1_description" id="expense1_description">
+        <label for="expense1_amount">Expense 1 Amount:</label>
+        <input type="number" name="expense1_amount" id="expense1_amount"><br><br>
+
+        <label for="expense2_description">Expense 2 Description:</label>
+        <input type="text" name="expense2_description" id="expense2_description">
+        <label for="expense2_amount">Expense 2 Amount:</label>
+        <input type="number" name="expense2_amount" id="expense2_amount"><br><br>
+
+        <label for="payment1_amount">Payment 1 Amount:</label>
+        <input type="number" name="payment1_amount" id="payment1_amount"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Balance:</h2>
+    <ul>
+        <li>User 1: {{ user1_balance }}</li>
+        <li>User 2: {{ user2_balance }}</li>
+        <li>User 3: {{ user3_balance }}</li>
+    </ul>
+</body>
+</html>
