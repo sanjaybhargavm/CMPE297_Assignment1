@@ -9,4 +9,11 @@ medium article:https://medium.com/@sanjaybhargav.madamanchi/chat-gpt-code-interp
 
 Part 2:
 
-Gpt engineer :  https://youtu.be/KwSFW7YklEs
+Gpt engineer :  created a basic split wise application where user enters amount and people and the app splits it equallu
+prompt:Write a python code to create a simple splitwise application where user enters the amount and the number of people. The application must divide the amount equally among the given number of people.
+screen capture: https://youtu.be/KwSFW7YklEs
+
+Copilot Chat: Created a pseudo splitwise which has users the description and then modifys the app
+screen capture: https://youtu.be/4lMj1_XlKws
+
+
