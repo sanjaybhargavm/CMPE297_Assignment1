@@ -1,0 +1,63 @@
+The application will be a simple GUI application using Python's built-in `tkinter` library. The core classes and functions will be:
+
+1. `SplitwiseApp`: This is the main class for the application. It will handle creating the GUI and processing user input.
+2. `calculate_split`: This is a method in the `SplitwiseApp` class. It will take the total amount and the number of people as input, calculate the split, and update the GUI with the result.
+
+The application will consist of a single Python file, `splitwise.py`.
+
+splitwise.py
+```python
+import tkinter as tk
+from tkinter import messagebox
+
+class SplitwiseApp:
+    def __init__(self, window):
+        self.window = window
+        self.window.title("Splitwise App")
+
+        self.amount_label = tk.Label(window, text="Total Amount ($):")
+        self.amount_label.pack()
+        self.amount_entry = tk.Entry(window)
+        self.amount_entry.pack()
+
+        self.people_label = tk.Label(window, text="Number of People:")
+        self.people_label.pack()
+        self.people_entry = tk.Entry(window)
+        self.people_entry.pack()
+
+        self.calculate_button = tk.Button(window, text="Calculate", command=self.calculate_split)
+        self.calculate_button.pack()
+
+        self.result_label = tk.Label(window, text="")
+        self.result_label.pack()
+
+    def calculate_split(self):
+        try:
+            total_amount = float(self.amount_entry.get())
+            num_people = int(self.people_entry.get())
+            if num_people <= 0:
+                raise ValueError("Number of people must be positive.")
+            split_amount = round(total_amount / num_people, 2)
+            remaining_amount = round(total_amount - split_amount * num_people, 2)
+            self.result_label['text'] = f"Each person should pay: ${split_amount}\n" \
+                                        f"The first person should pay an additional: ${remaining_amount}"
+        except ValueError as e:
+            messagebox.showerror("Invalid Input", str(e))
+
+def main():
+    root = tk.Tk()
+    app = SplitwiseApp(root)
+    root.mainloop()
+
+if __name__ == "__main__":
+    main()
+```
+
+requirements.txt
+```txt
+tkinter==8.6
+```
+
+The `splitwise.py` file contains the `SplitwiseApp` class which creates the GUI for the application and handles user input. The `calculate_split` method takes the total amount and the number of people as input, calculates the split, and updates the GUI with the result. If the user enters invalid input, an error message is displayed.
+
+The `requirements.txt` file lists the dependencies for the application. In this case, the only dependency is `tkinter`, which is used for creating the GUI.
